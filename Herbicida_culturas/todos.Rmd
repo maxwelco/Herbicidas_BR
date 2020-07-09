@@ -1,0 +1,127 @@
+---
+title: "herbicidas"
+author: "Maxwel Coura Oliveira"
+date: "5/26/2020"
+output: html_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+```
+
+```{r include=FALSE}
+data <- read_tsv("todos_herbicidas.txt")
+```
+
+```{r}
+dt <- data %>% 
+  unite("soja", contains("soja"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("milho", contains("milho"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("algodão", contains("algodão"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("sorgo", contains("sorgo"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("café", contains("café"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("arroz", contains("arroz"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("trigo", contains("trigo"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("feijão", c("feijão", "Feijão_spd"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("cana", contains("cana"), na.rm = TRUE, remove = TRUE) %>%   
+  unite("aveia_preta", matches("aveia_preta"), na.rm = TRUE, remove = TRUE) %>%  
+  unite("pastagem", contains("pastagem"), na.rm = TRUE, remove = TRUE) %>%  
+  unite("manejo_outonal", matches("manejo_outonal"), na.rm = TRUE, remove = TRUE) %>%  
+  unite("citros", contains("citros"), na.rm = TRUE, remove = TRUE) %>%  
+  unite("eucalipto", contains("eucalipto"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("pinus", contains("pinus"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("batata", c("batata_dessecação", "batata"), na.rm = TRUE, remove = TRUE) %>% 
+  unite("aveia", c("aveia", "aveia_1"), na.rm = TRUE, remove = TRUE) %>%
+  unite("centeio", c("centeio", "centeio_1"), na.rm = TRUE, remove = TRUE) %>%  unite("seringueira", contains("seringueira"), na.rm = TRUE, remove = TRUE) 
+```
+
+
+```{r}
+nd <- dt %>% 
+  pivot_longer(cols = soja:tratamento_do_solo, names_to = "culturas", 
+               values_to = "bula") %>% 
+  mutate(`dose_(g/L)_(g/kg)` = gsub(",", ".", `dose_(g/L)_(g/kg)`))
+```
+
+
+```{r}
+nd <- nd %>% 
+  mutate(bula = ifelse(bula == "x_x" | bula == "x", "x", NA)) %>% 
+  filter(bula == "x") %>% 
+  filter(Formulacao != "NA") %>% 
+  mutate(Formulacao = str_to_lower(Formulacao, locale = "pt")) %>% 
+  filter(Formulacao != "micro-granulado (mg)")
+```
+
+
+```{r}
+nd %>% 
+  group_by(Formulacao) %>% 
+  summarise(Freq = n()) %>% 
+  mutate(Percentage = Freq / nrow(nd) *100) 
+```
+
+
+```{r}
+pattern <- "(?<=\\().+?(?=\\))" #regex to remove words in parenthesis of formulations
+
+nd <- nd %>% 
+  mutate(form_sigla = as.character(str_extract_all(Formulacao, pattern))) %>% 
+mutate(form_tipo = ifelse(form_sigla == "wg" | form_sigla == "wp" | form_sigla == "sp" | form_sigla == "gr" | form_sigla == "gr", "seco",                                   "líquido")) %>% 
+  mutate(dose_gkg = ifelse(form_tipo == "seco", 
+                           `dose_(g/L)_(g/kg)`, NA)) %>% 
+  mutate(dose_gL = ifelse(form_tipo == "líquido", `dose_(g/L)_(g/kg)`, NA))
+```
+
+
+```{r}
+pattern <- "\\(([^)]+)\\)" #unnesting ia
+
+nd <- nd %>%  
+  mutate(ia_1 = str_split(ingrediente, pattern, simplify = TRUE)[,1],
+         ia_2 = str_split(ingrediente, pattern, simplify = TRUE)[,2],
+         ia_3 = str_split(ingrediente, pattern, simplify = TRUE)[,3],
+         ia_2 = str_split(ia_2, " \\+ ", simplify = TRUE)[,2],
+         ia_3 = str_split(ia_3, " \\+ ", simplify = TRUE)[,2])
+```
+
+
+
+```{r}
+nd %>% 
+  filter(culturas == "yacon")
+```
+
+
+ia_1 = contains("tepraloxidim") | contains(ia_1 == "setoxidim" | contains(ia_1 == contains("profoxidim" | ia_1 == contains("cletodim" | ia_1 == contains("quizalofope-P-etílico" | ia_1 == contains("haloxifope-P-metílico" | ia_1 == "quizalofope-P-etilico" |ia_1 == "fluazifope-P-butil" | ia_1 == contains("propaquizafope" | ia_1 == contains("cialofope-butílico"| ia_1 = =contains( "clodinafope-propargilco", "A",
+
+
+
+# Selecionando aveia preta
+
+```{r}
+ervilha <- nd %>% 
+  filter(culturas == "ervilha") %>% 
+  select(produto_comercial, ingrediente, culturas)
+
+write_excel_csv(ervilha, "ervilha.csv")
+```
+
+
+# Culturas de inverno
+
+```{r}
+library(scales)
+library(ggrepel)
+inverno <- nd %>% 
+  filter(culturas == "aveia_preta" | culturas == "trigo" | culturas == "centeio" | culturas == "cevada" | culturas == "triticale" | culturas == "aveia") %>% 
+  group_by(ia_1) %>% 
+  count() %>% 
+  ungroup(ia_1) %>% 
+  add_tally(name = "nn") %>% 
+  mutate(perc = round((n/nn) *100, 0)) %>% 
+  arrange(desc(perc))
+inverno
+```
+
+
