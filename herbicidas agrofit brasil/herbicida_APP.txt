@@ -1,0 +1,257 @@
+codigo	MdA	grupo_quimico	ingrediente_ativo
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ariloxifenoxipropionatos (FOPs)	Fenoxaprope-P-etílico
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ariloxifenoxipropionatos (FOPs)	Fluasifope-P-butílico
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ariloxifenoxipropionatos (FOPs)	Haloxifope-P-metílico
+A	Inibição da síntese lipídica (inibidores da ACCase)	Fenilpirazolinas (DENs)	Pinoxaden
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ciclohexanodionas (DIMs)	Profoxidim
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ariloxifenoxipropionatos (FOPs)	Propaquizafope
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ariloxifenoxipropionatos (FOPs)	Quizalofope-P-etílico
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ciclohexanodionas (DIMs)	Setoxidim
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ciclohexanodionas (DIMs)	Tepraloxidim
+A	Inibição da síntese lipídica (inibidores da ACCase)	Ciclohexanodionas (DIMs)	Tralcoxidime
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Amidosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Azinsulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Bensulfuron-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Pirimidinil (tio) benzoatos	Bispiribaque-sódico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Ciclossulfamurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Cinosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Cloransulam-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Clorimurom-etílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Clorosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Diclosulam
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Etoxissulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Flazassulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Florasulam
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilaminocarbonil-triazolinonas	Flucarbazone-sódico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Flumetsulam
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Flupirsulfuron-metílico-sódico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Foransulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Halossulfurom-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazametabenze-metilo
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazamoxi
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazapique
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazapir
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazaquim
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Imidazolinonas	Imazetapir
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Imazosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Iodossulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Mesossulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Metosulam
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Metsulfurom-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Nicossulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Oxassulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Triazolopirimidinas	Penoxsulam
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Pirazossulfurom-etílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Pirimidinil (tio) benzoatos	Piribenzoxim
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Pirimidinil (tio) benzoatos	Piriftalid
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Pirimidinil (tio) benzoatos	Piriminobac-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Pirimidinil (tio) benzoatos	Piritiobaque-sódico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Primisulfuron-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilaminocarbonil-triazolinonas	Propoxicarbazona de sódio
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Prosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Rimsulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Sulfometurom-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Sulfosulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Thifensulfuron-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Triasulfuron
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Tribenuron-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Trifloxisulfurom
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Triflusulfuron-metílico
+B	Inibidores da acetolactato sintase (ALS) (síntese de aminoácido de cadeia ramificada)	Sulfonilureias	Tritosulfuron
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Ametrina
+C1	Inibição da fotossíntese no fotossistema II	Triazolinonas	Amicarbazona
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Atrazina
+C1	Inibição da fotossíntese no fotossistema II	Uracilas	Bromacila
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Cianazina
+C1	Inibição da fotossíntese no fotossistema II	Fenil-carbamatos	Desmedifame
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Desmetrina
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Dimethametrine
+C1	Inibição da fotossíntese no fotossistema II	Fenil-carbamatos	Fenemedifame
+C1	Inibição da fotossíntese no fotossistema II	Triazinonas	Hexazinona
+C1	Inibição da fotossíntese no fotossistema II	Uracilas	Lenacil
+C1	Inibição da fotossíntese no fotossistema II	Triazinonas	Metamitrona
+C1	Inibição da fotossíntese no fotossistema II	Triazinonas	Metribuzin
+C1	Inibição da fotossíntese no fotossistema II	Piridazinonas	Pirazon (=Chloridazon)
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Prometon
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Prometrina
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Propazina
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Simazina
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Simetrin
+C1	Inibição da fotossíntese no fotossistema II	Uracilas	Terbacil
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Terbumeton
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Terbutilazina
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Terbutrin
+C1	Inibição da fotossíntese no fotossistema II	Triazinas	Trietazine
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Chlorobromuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Chlorotoluron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Chloroxuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Dímefuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Diurom
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Ethidimuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Fluometuron (ver F3)
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Isoproturon
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Isourom
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Lefenurom
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Linurom
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Methabenzthiazuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Metobromuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Metoxuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Monolinuron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Neburon
+C2	Inibição da fotossíntese no fotossistema II	Amidas	Pentanochlor
+C2	Inibição da fotossíntese no fotossistema II	Amidas	Propanil
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Siduron
+C2	Inibição da fotossíntese no fotossistema II	Ureias	Tebutiurom
+C3	Inibição da fotossíntese no fotossistema II	Benzotiadiazinonas	Bentazona
+C3	Inibição da fotossíntese no fotossistema II	Nitrilas	Bromofenoxim
+C3	Inibição da fotossíntese no fotossistema II	Nitrilas	Bromoxinil
+C3	Inibição da fotossíntese no fotossistema II	Nitrilas	Ioxinila
+C3	Inibição da fotossíntese no fotossistema II	Fenil-piridazinas	Piridafol
+C3	Inibição da fotossíntese no fotossistema II	Fenil-piridazinas	Piridate
+D	Inibidores do fotossistema I (formadores de radicais livres)	Bipiridíliuns	Diquate
+D	Inibidores do fotossistema I (formadores de radicais livres)	Bipiridíliuns	Paraquate
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Acifluorfem-sódico
+E	Inibição da protoporfirinogênio oxidase (PPO)	Triazolinonas	Azafenidina
+E	Inibição da protoporfirinogênio oxidase (PPO)	Pirimidindionas	Benzfendizona
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Bifenox
+E	Inibição da protoporfirinogênio oxidase (PPO)	Pirimidindionas	Butafenacil
+E	Inibição da protoporfirinogênio oxidase (PPO)	Triazolinonas	Carfentrazona-etílica
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Chlomethoxifen
+E	Inibição da protoporfirinogênio oxidase (PPO)	N-fenilftalimidas	Cinidon-etílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	Fenilpirazoles	Fluazolate
+E	Inibição da protoporfirinogênio oxidase (PPO)	Outros	Flufenpir-etílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	N-fenilftalimidas	Flumicloraque-pentílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	N-fenilftalimidas	Flumioxazina
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Fluoroglicofen-etílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	Tiadiazoles	Flutiacet-metílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Fomesafem
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Halosafen
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Lactofem
+E	Inibição da protoporfirinogênio oxidase (PPO)	Oxadiazoles	Oxadiargil
+E	Inibição da protoporfirinogênio oxidase (PPO)	Oxadiazoles	Oxadiazona
+E	Inibição da protoporfirinogênio oxidase (PPO)	Difeniléteres	Oxifluorfem
+E	Inibição da protoporfirinogênio oxidase (PPO)	Oxazolidinedionas	Pentoxazona
+E	Inibição da protoporfirinogênio oxidase (PPO)	Outros	Piraclonil
+E	Inibição da protoporfirinogênio oxidase (PPO)	Fenilpirazoles	Piraflufem-etílico
+E	Inibição da protoporfirinogênio oxidase (PPO)	Outros	Profluazol
+E	Inibição da protoporfirinogênio oxidase (PPO)	Triazolinonas	Sulfentrazona
+E	Inibição da protoporfirinogênio oxidase (PPO)	Tiadiazoles	Thidiazimin
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Outros	Beflubutamid
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Piridinecarboxamidas	Diflufenicam
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Outros	Fluridona
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Outros	Flurocloridona
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Outros	Flurtamone
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Piridazinonas	Norflurazona
+F1	Inibição da biossíntese de carotenoides na fitoeno desarurase (PDS)	Piridinecarboxamidas	Picolinafen
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Outros	Benzobiciclon
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Pirazoles	Benzofenap
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Isoxazoles	Isoxachlortole
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Isoxazoles	Isoxaflutol
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Tricetonas	Mesotriona
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Pirazoles	Pirazolinate
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Pirazoles	Pirazoxifen
+F2	Inibição da biossíntese de carotenoides na 4-hidroxifenil-piruvato-dioxigenase (4-HPPD)	Tricetonas	Sulcotriona
+F3	Inibição da biossíntese de carotenoides (alvo desconhecido)	Difeniléteres (Branqueamento)	Aclonifem
+F3	Inibição da biossíntese de carotenoides (alvo desconhecido)	Triazoles	Amitrole (inibição in vivo de licopeno ciclase)
+F3	Inibição da biossíntese de carotenoides (alvo desconhecido)	Ureias (Branqueamento)	Fluometuron (ver C2)
+F4	Inibição da DOXP sintase	Isoxazolidinonas	Clomazona
+G	Inibição da EPSP sintase	Glicinas	Glifosato
+G	Inibição da EPSP sintase	Glicinas	Sulfosato
+H	Inibição da glutamina sintetase	Ácido fosfínico	Bialafos (=Bilanafos)
+H	Inibição da glutamina sintetase	Ácido fosfínico	Glufosinato - sal de amônio
+I	Inibição da DHP (dihidropteroato sintase)	Carbamatos	Asulam
+K1	Inibição da formação de microtúbulos	Fosforoamidatos	Amiprofos-metilo
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Benefin (=Benfluralina)
+K1	Inibição da formação de microtúbulos	Fosforoamidatos	Butamifos
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Butralina
+K1	Inibição da formação de microtúbulos	Benzamidas	DCPA (=Clortal-dimetílico)
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Dinitramina
+K1	Inibição da formação de microtúbulos	Piridinas	Dithiopir
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Etalfluralina
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Orizalina
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Pendimetalina
+K1	Inibição da formação de microtúbulos	Benzamidas	Propizamida = pronamida
+K1	Inibição da formação de microtúbulos	Benzamidas	Tebutam
+K1	Inibição da formação de microtúbulos	Piridinas	Tiazopir
+K1	Inibição da formação de microtúbulos	Dinitroanilinas	Trifluralina
+K2	Inibidores da mitose	Carbamatos	Carbetamida
+K2	Inibidores da mitose	Carbamatos	Clorprofame
+K2	Inibidores da mitose	Carbamatos	Profame
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V1)	Acetocloro
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V1)	Alacloro
+K3	Inibição da divisão celular (VLCFA)	Outros	Anilofos
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V1)	Butacloro
+K3	Inibição da divisão celular (VLCFA)	Outros	Cafenstrola
+K3	Inibição da divisão celular (VLCFA)	Acetamidas	Difenamida
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V2)	Dimetacloro
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V2)	Dimetenamida
+K3	Inibição da divisão celular (VLCFA)	Tetrazolinonas	Fentrazamida
+K3	Inibição da divisão celular (VLCFA)	Oxiacetamidas	Flufenacet
+K3	Inibição da divisão celular (VLCFA)	Oxiacetamidas	Mefenacete
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V2)	Metazacloro
+K3	Inibição da divisão celular (VLCFA)	Cloroacetamidas (V2)	Metolacloro
+K3	Inibição da divisão celular (VLCFA)	Acetamidas	Naproanilida
+L	Inibição da síntese de celulose (parede celular)	Ácido quinolinocarboxílico	Quinmerac (também grupo O)
+M	Desacoplador de fosforilação oxidativa (disruptores de membrana)	Dinitrofenóis	Dinoseb
+M	Desacoplador de fosforilação oxidativa (disruptores de membrana)	Dinitrofenóis	Dinoterb
+M	Desacoplador de fosforilação oxidativa (disruptores de membrana)	Dinitrofenóis	DNOC
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Benzofuranas	Benfuresata
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Fosforoditioatos	Bensulide
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Butilate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Cicloate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Ácido clorocarbônico	Dalapon
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	dimepiperate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	EPTC (=S-etil-dipropiltiocarbamato)
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Esprocarbe
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Benzofuranas	Ethofumesate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Ácido clorocarbônico	Flupropanate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Molinato
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Orbencarbe
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Pebulate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Prosulfocarb
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Ácido clorocarbônico	TCA
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Tiobencarbe (=Bentiocarbe)
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Tiocarbazil
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Triallate
+N	Inibição da síntese de lipídeos - diferentes de inibidores da ACCase	Tiocarbamatos	Vernolate
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	2,4-D
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	2,4-DB
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Aminopiralide
+O	Mimetizadores da auxina	Outros	Benazolin-etilico
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Clomeprope
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Clopiralid
+O	Mimetizadores da auxina	Ácido benzóico	Clorambem
+O	Mimetizadores da auxina	Ácido benzóico	Dicamba
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Dicloropropeno = 2,4-DP
+O	Mimetizadores da auxina	Arilpicolinato	Florpirauxifen-benzil
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Fluroxipir
+O	Mimetizadores da auxina	Arilpicolinato	Halauxifen-metil
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	MCPA
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	MCPB
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Mecoprop (=MCPP; CMPP)
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Picloram
+O	Mimetizadores da auxina	Ácido quinolinocarboxílico	Quincloraque (também grupo L)
+O	Mimetizadores da auxina	Ácido quinolinocarboxílico	Quinmerac (também grupo L)
+O	Mimetizadores da auxina	Ácido benzóico	TBA
+O	Mimetizadores da auxina	Ácido fenóxicarboxílico	Triclopir
+P	Inibidores do transporte de auxinas	Ftalamatos semicarbazonas	Diflufenzopir-sódico
+P	Inibidores do transporte de auxinas	Ftalamatos semicarbazonas	Naptalam
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Ácido oléico
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Ácido pelargônico
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Bromobutida
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Cinmetilina
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Cloroflurenol
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Cumiluron
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Dazomete
+Z	Modo de ação desconhecido	Pirazóliuns	Difenzoquate
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Dimrona (=Daimurona)
+Z	Modo de ação desconhecido	Organoarsenicais	DSMA
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Etobenzanida
+Z	Modo de ação desconhecido	Ácido arilaminopropiônico	Flamprop-M-metílico/-isopropil
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Fosamina
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Indanofan
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Metam
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Metil-dimrona
+Z	Modo de ação desconhecido	Organoarsenicais	MSMA (Monosodium methanearsonate)
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Oxaziclomefona
+Z	Modo de ação desconhecido	Outro (Desconhecido)	Piributicarbe

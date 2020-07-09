@@ -1,0 +1,274 @@
+---
+title: "Chart"
+author: "Maxwel Coura Oliveira"
+date: "4/25/2020"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+misturas <- read.csv("misturas.csv")
+head(misturas)
+```
+
+
+
+
+```{r}
+prod_com <- str_split(misturas$empresa, " ", simplify = TRUE)
+ing_at <- str_count(misturas$ingrediente, "and")
+
+
+misturas <- misturas %>% 
+  mutate(empresa = prod_com[,1],
+         num_ia = ing_at + 1) 
+
+misturas$num_ia <- factor(misturas$num_ia)
+```
+
+```{r}
+misturas %>% 
+  mutate(count = str_count(ingrediente, pattern = "triazinona")) %>% 
+  summarise(Freq = sum(count))
+```
+
+```{r}
+acido_piridinocarboxilico <- 63
+acido_ariloxialcanoico <- 91
+acido_pirimidiniloxibenzoico <- 2
+acido_piridiniloxialcanoico <- 56
+ureia <- 78
+sulfonilurea <- 74 
+acido_ariloxifenoxipropionico <- 34
+eteretilica <- 15
+benzotiadiazinona <- 8
+triazinona <- 59
+imidazolinona <- 42
+triazolona <- 23
+cloroacetanilida <- 14
+oxima_ciclohexanodiona <- 22
+alquilazina <- 5
+organoarsenico <- 5
+glicina_substituida <- 117 
+dinitroanilina <- 11
+sulfanililcarbamato <- 1
+acido_benzoico <- 2
+isoxazol <- 32 
+isotiocianato_de_metila  <-  2
+tricetona <- 16
+bipiridilio <- 29
+alifatico_halogenado <- 1
+sulfonanilida_triazolopirimidina <- 6
+isoxazolidinona <- 27
+acido_quinolinocarboxilico <- 1
+homoalanina_substituida <- 10
+anilida <- 31
+ciclohexenodicarboximida <- 12
+fenilpirazol <- 1
+pirimidinadiona <- 3
+arilpicolinato <- 2
+benzonitrila <- 1
+triazina <- 96
+```
+
+```{r}
+63 + 91 + 2 + 56 + 78 + 74 + 34 + 15 + 8 + 59 + 42 + 23 + 14 + 22 + 5 + 5 + 117 + 11 + 1 + 2 + 32 + 2 + 16 + 29 + 1 + 6 + 27 + 1 + 10 + 31 + 12 + 1 + 3 + 2 + 1 + 96
+```
+```{r}
+acido_piridinocarboxilico + acido_ariloxialcanoico +
+acido_pirimidiniloxibenzoico +
+acido_piridiniloxialcanoico +
+ureia +
+sulfonilurea +
+acido_ariloxifenoxipropionico +
+eteretilica +
+benzotiadiazinona +
+triazinona +
+imidazolinona +
+triazolona +
+cloroacetanilida +
+oxima_ciclohexanodiona +
+alquilazina +
+organoarsenico +
+glicina_substituida +
+dinitroanilina +
+sulfanililcarbamato +
+acido_benzoico +
+isoxazol +
+isotiocianato_de_metila  +
+tricetona +
+bipiridilio +
+alifatico_halogenado +
+sulfonanilida_triazolopirimidina +
+isoxazolidinona +
+acido_quinolinocarboxilico +
+homoalanina_substituida +
+anilida +
+ciclohexenodicarboximida +
+fenilpirazol +
+pirimidinadiona +
+arilpicolinato +
+benzonitrila +
+triazina 
+```
+
+
+
+
+```{r}
+(167 * 2) + 612 + (9*3)
+```
+```{r}
+992 - 973
+```
+
+
+
+```{r}
+misturas %>% 
+  group_by(empresa) %>% 
+  count() %>% 
+  ggplot() + aes(x=reorder(empresa, n), y=n, fill=n) + 
+           geom_bar(stat="identity") + 
+                  coord_flip() + theme_bw() +
+  scale_fill_gradient(high = "red", low = "grey") +
+  geom_text(aes(label = str_c(round(n), "")),
+            position = position_stack(vjust = 0.5), size=3) +
+  theme(panel.grid = element_blank(), legend.position = "none") +
+  labs(y="Número de produtos registrados", x="", caption = "Figura: Maxwel C Oliveira", subtitle = "Agrofit - Abril 2020") +
+  ggsave("empresa.png", height=8, width=6, dpi=600)
+```
+
+```{r}
+(612/799) + (158/799) + (9/799)
+```
+
+```{r}
+number_2 = c(612, 158, 9)
+number = c(79, 21, 1)
+herbicide <- c("herbicide", "herbicide", "herbicide")
+type = c("1 ia", "Pré-mistura com 2 ia", "Pré-mistura com 3 ia")
+nd <- data_frame(number, herbicide, type)
+
+ggplot(nd, aes(x= "", y=number_2, fill=type, label=number_2)) + geom_bar(stat="identity",  width=0.5) +
+  coord_polar(theta = "y", start = pi / 3) + geom_label(fill="white") + theme_bw() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), axis.ticks = element_blank(),
+        panel.grid = element_blank(), legend.position = "bottom") +
+  scale_fill_brewer(name = "", palette = "Reds") +
+  labs(title = "", caption = "Figura: Maxwel C Oliveira", subtitle = "Agrofit - Abril 2020") +
+  ggsave("herbicide_mixtures.png", units="in", width=5, height=5, dpi=300)
+```
+
+
+```{r}
+ia <- str_split(misturas$ingrediente, "and",
+                     simplify = TRUE)
+
+
+ia_1 <- str_split(ia[,1], " ",
+                     simplify = TRUE)
+ia_1 <- str_split(ia_1[,1], "-", simplify = TRUE)
+
+
+ia_2 <- str_split(ia[,2], " ",
+                     simplify = TRUE)
+ia_2 <- str_split(ia_2[,2], "-",
+                     simplify = TRUE)
+
+ia_3 <- str_split(ia[,3], " ",
+                     simplify = TRUE)
+ia_3 <- str_split(ia_3[,2], "-",
+                     simplify = TRUE)
+
+
+misturas <- misturas %>% 
+  mutate(um_ia = ia_1[,1],
+         dois_ia = ia_2[,1],
+         tres_ia = ia_3[,1])
+
+#herb <- str_c(misturas$um_ia, " + ", misturas$dois_ia, " + ", misturas$tres_ia)
+```
+
+```{r}
+612/779
+167/779
+9/779
+```
+  
+  
+```{r}
+misturas %>% 
+  group_by(num_ia) %>% 
+  count(name="n") %>% 
+  ungroup(num_ia) %>% 
+  add_tally(name="nn") %>% 
+  mutate(perc = (n/nn)*100)
+```
+
+```{r}
+misturas %>% 
+  filter(num_ia == 1) %>%
+  group_by(um_ia) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+   ggplot() + aes(x=reorder(um_ia, n), y=n, fill=n) + 
+           geom_bar(stat="identity") + ylim(0, 115) +
+                  coord_flip() + theme_bw() +
+  geom_text(aes(label = str_c(round(n), "")),
+            position = position_stack(vjust = 0.5), size=3) +
+  scale_fill_gradient(high = "red", low = "grey") +
+  theme(panel.grid = element_blank(), legend.position = "none") +
+  labs(y="Número de produtos registrados", x="", caption = "Figura: Maxwel C Oliveira", subtitle = "Agrofit - Abril 2020") +
+  ggsave("herb_ia.png", height=10, width=6, dpi=600)
+```
+
+```{r}
+misturas %>% 
+ filter(num_ia == "2") %>%
+  select(um_ia, dois_ia) %>% 
+  filter(dois_ia != "") %>% 
+  group_by(um_ia, dois_ia) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  mutate(new = str_c(um_ia, dois_ia, sep = " + ")) %>% 
+   ggplot() + aes(x=reorder(new, n), y=n, fill=n) + 
+           geom_bar(stat="identity") + ylim(0, 32) +
+                  coord_flip() + theme_bw() +
+  geom_text(aes(label = str_c(round(n), "")),
+            position = position_stack(vjust = 0.5), size=3) +
+  scale_fill_gradient(high = "red", low = "grey") +
+  theme(panel.grid = element_blank(), legend.position = "none") +
+  labs(y="Número de produtos registrados", x="", caption = "Figura: Maxwel C Oliveira", subtitle = "Agrofit - Abril 2020") +
+  ggsave("herb_dois_ia.png", height=10, width=6, dpi=600)
+```
+
+
+
+```{r}
+misturas %>% 
+  filter(num_ia == "3") %>% 
+  select(um_ia, dois_ia, tres_ia) %>% 
+  filter(dois_ia != "" & tres_ia != "") %>% 
+  group_by(um_ia, dois_ia, tres_ia) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  mutate(new = str_c(um_ia, dois_ia, tres_ia, sep = " + ")) %>% 
+   ggplot() + aes(x=reorder(new, n), y=n, fill=n) + 
+           geom_bar(stat="identity", width = 0.5) + ylim(0, 3) +
+                  coord_flip() + theme_bw() +
+  geom_text(aes(label = str_c(round(n), "")),
+            position = position_stack(vjust = 0.5), size=3) +
+  scale_fill_gradient(high = "red", low = "grey") +
+  theme(panel.grid = element_blank(), legend.position = "none") +
+  labs(y="Número de produtos registrados", x="", caption = "Figura: Maxwel C Oliveira", subtitle = "Agrofit - Abril 2020") +
+  ggsave("herb_tres_ia.png", height=5, width=7, dpi=600)
+```
+
+
+
+
+

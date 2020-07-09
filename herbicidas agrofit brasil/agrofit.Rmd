@@ -1,0 +1,152 @@
+---
+title: "Agrolink"
+author: "Maxwel Coura Oliveira"
+date: "5/6/2020"
+output: pdf_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(ggthemes)
+```
+
+```{r}
+guess_encoding("hrac.txt")
+```
+
+
+```{r}
+data <- read_csv("agrolink.csv")
+```
+
+
+```{r}
+agrolink <- read_tsv("agrolink.txt")
+```
+
+
+
+
+
+```{r}
+chart <- hrac %>% 
+  mutate(MdA = ifelse(codigo == "A", "A - Inibidores da ACCase",
+                        ifelse(codigo == "B", "B - Inibidores da acetolactato sintase (ALS)", 
+                               ifelse(codigo == "C1" | codigo == "C2", "C1,2 - Inibidores da fotossíntese no FSII (ligantes na serina 264 da D1 e outros)", 
+                                      ifelse(codigo == "C3", "C3 - Inibidores da fotossíntese no fotossistema II (ligantes na histidina 215 da D1)",
+                                             ifelse(codigo == "D", "D - Desvios de elétrons do fotossistema I",
+                                      ifelse(codigo == "E", "E - Inibidores da protoporfirinogênio oxidase (PPO)",
+                                             ifelse(codigo == "F1", "F1 - Inibidores da biossíntese de carotenoides na fitoeno desarurase (PDS)", 
+                                                    ifelse(codigo == "F2", "F2 - Inibidores da HPPD",
+                                                           ifelse(codigo == "F3", "F3 - Inibidores da biossíntese de carotenoides (alvo desconhecido)", ifelse(codigo == "F4", "F4 - Inibidores da DOXP sintase",                                                                  ifelse(codigo == "G", "G - Inibidores da EPSP sintase", ifelse(codigo == "H", "H - Inibidores da glutamina sintetase", ifelse(codigo == "I", "I - Inibidores da DHP sintase",
+ ifelse(codigo == "K1", "K1 - Inibidores da formação de microtúbulos", ifelse(codigo == "K2", "K2 - Inibidores da mitose", ifelse(codigo == "K3", "K3 - Inibidores de ácido graxo de cadeia muito longa", ifelse(codigo == "L", "L - Inibidores da síntese de celulose (parede celular)", ifelse(codigo == "M", "M - Desacoplador de fosforilação oxidativa (disruptores de membrana)", ifelse(codigo == "N", "N - Inibidores da síntese de lipídeos - diferentes de inibidores da ACCase", ifelse(codigo == "O", "O - Mimetizadores da auxina", ifelse(codigo == "P", "P - Inibidores do transporte de auxinas", ifelse(codigo == "Z", "Z - Modo de ação desconhecido", NA))) )))))))))))))))))))) %>% 
+  select(MdA, grupo_quimico, ingrediente_ativo) %>% 
+  mutate(ingrediente_ativo = str_to_lower(ingrediente_ativo))
+chart
+```
+
+
+
+
+```{r}
+MdA <- c("Q - Inibidores da tioesterase de ácidos graxos", "Q - Inibidores da tioesterase de ácidos graxos", "R - Inibidores da proteína fosfatase da serina treonina", "S - Inibidores da solanossifosfato sintase", "T - Inibidores da homogenentisato solanossil transferase")
+grupo_quimico <- c("Éteres benzílicos", "Éteres benzílicos", "Desconhecida", "Desconhecida", "Desconhecida")
+ingrediente_ativo <- c("cinmethylin", "methiozolin", "endothall", "aclonifen", "cyclopyrimorate")
+
+new_pt <- data_frame(MdA, grupo_quimico, ingrediente_ativo)
+
+chart <- full_join(chart, new_pt)
+
+#duplicated(chart$ingrediente_ativo)
+```
+
+```{r}
+#write_tsv(chart, path= "hrac.txt")
+```
+
+
+
+
+```{r}
+chart %>% 
+  group_by(MdA) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  ggplot() + aes(x=reorder(MdA,n), y=n, fill=n, label = n) + coord_flip() +
+ labs(y="Número de ingrediente ativo", x="", subtitle = "Fonte: HRAC - Brasil (adaptado) / Maio 2020", caption = "Figura: Maxwel Coura Oliveira") +
+  theme_pander() +
+  theme(axis.text.x =  element_blank()) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  geom_label(size=3, color="white", nudge_y = 2, show.legend = FALSE) +
+  ggsave("herbicidas.png", width=9, height=6, dpi=600)
+```
+
+
+
+```{r}
+chart_EN <- hrac %>% 
+  mutate(MdA = ifelse(codigo == "A", "1 - Inhibition of ACCase",
+                        ifelse(codigo == "B", "2 - Inhibition of ALS", 
+                               ifelse(codigo == "C1" | codigo == "C2", "5 - Inhibition of photosynthesis PS II - Serine 264", 
+                                      ifelse(codigo == "C3", "6 - Inhibition of photosynthesis PS II - Histidine 215",
+                                             ifelse(codigo == "D", "22 - PS I electron diversion",
+                                      ifelse(codigo == "E", "14 - PPO inhibitors",
+                                             ifelse(codigo == "F1", "12 - Inhibition of PDS", 
+                                                    ifelse(codigo == "F2", "27 - Inhibition of HPPD",
+                                                           ifelse(codigo == "F3", "34 - Inhibition of lycopene cyclase", ifelse(codigo == "F4", "13 - Inhibition of DOXP synthase",                                                                  ifelse(codigo == "G", "9 - Inhibition of EPSP synthase", ifelse(codigo == "H", "H - Inhibition of glutamine synthetase", ifelse(codigo == "I", "18 - Inhibition of DHP sinthase",
+ ifelse(codigo == "K1", "3 - Inhibition of microtubule assembly", ifelse(codigo == "K2", "23 - Inhibition of microtubule organization", ifelse(codigo == "K3", "15 - Inhibition of VLCFAs", ifelse(codigo == "L", "29 - Inhibition of cellulose synthesis", ifelse(codigo == "M", "24 - Uncouplers", ifelse(codigo == "N", "8 - Inhibition of lipid synthesis - not ACCase", ifelse(codigo == "O", "4 - Auxin mimics", ifelse(codigo == "P", "19 - Auxin transport inhibitors", ifelse(codigo == "Z", "0 - Unknown mode of action", NA))) )))))))))))))))))))) %>% 
+  select(MdA, grupo_quimico, ingrediente_ativo) %>% 
+  mutate(ingrediente_ativo = str_to_lower(ingrediente_ativo))
+chart_EN
+```
+
+
+
+
+
+
+```{r}
+MdA <- c("30 - Inhibition of fatty acid thioesterase", "30 - Inhibition of fatty acid thioesterase", "31 - Inhibition of serine threonine protein phosphatase", "32 - Inhibition of solanesyl diphosphate synthase", "33 - Inhibition of homogentisate solanesyl transferase")
+grupo_quimico <- c("Benzyl ethers", "Benzyl ethers", "Unknown", "Unknown", "Unknown")
+ingrediente_ativo <- c("cinmethylin", "methiozolin", "endothall", "aclonifen", "cyclopyrimorate")
+
+new <- data_frame(MdA, grupo_quimico, ingrediente_ativo)
+
+chart_EN <- full_join(chart_EN, new)
+```
+
+
+
+
+```{r}
+chart_EN %>% 
+  group_by(MdA) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  ggplot() + aes(x=reorder(MdA,n), y=n, fill=n, label=n) + coord_flip() +
+ labs(y="Number of active ingredient", x="", subtitle = "Source: HRAC (adapted) / May 2020", caption = "Figure: Maxwel Coura Oliveira") +
+  theme_pander() +
+  theme(axis.text.x =  element_blank()) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  geom_label(size=3, color="white", nudge_y = 2, show.legend = FALSE) +
+  ggsave("herbicide_EN.png", width=9, height=6, dpi=600)
+```
+
+```{r}
+chart_EN %>% 
+  count()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
