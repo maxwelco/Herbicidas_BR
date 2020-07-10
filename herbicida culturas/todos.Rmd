@@ -36,6 +36,10 @@ dt <- data %>%
 ```
 
 
+
+
+
+
 ```{r}
 nd <- dt %>% 
   pivot_longer(cols = soja:tratamento_do_solo, names_to = "culturas", 
@@ -56,9 +60,16 @@ nd <- nd %>%
 
 ```{r}
 nd %>% 
-  group_by(Formulacao) %>% 
+  group_by(culturas) %>% 
   summarise(Freq = n()) %>% 
-  mutate(Percentage = Freq / nrow(nd) *100) 
+  mutate(Percentage = round(Freq / nrow(nd) *100, 1)) %>% 
+  arrange(desc(Freq)) %>% 
+  ggplot(aes(x=reorder(culturas, Freq), y=Freq, fill=Freq)) + geom_bar(stat="identity") + coord_flip() +
+  theme_bw() +
+  geom_label(aes(label=Freq), fill="white", size=2, hjust=0.5) +
+  theme(legend.position = "none") +
+  labs(y="Quantidade", x="") +
+  ggsave("culturas.png", height = 15, width = 10)
 ```
 
 
