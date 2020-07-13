@@ -69,7 +69,7 @@ nd %>%
   geom_label(aes(label=Freq), fill="white", size=2, hjust=0.5) +
   theme(legend.position = "none") +
   labs(y="Quantidade", x="") +
-  ggsave("culturas.png", height = 15, width = 10)
+  ggsave("culturas.pdf", height = 15, width = 10)
 ```
 
 
@@ -100,7 +100,17 @@ nd <- nd %>%
 
 ```{r}
 nd %>% 
-  filter(culturas == "yacon")
+  group_by(culturas, ingrediente) %>% 
+  summarise(Freq = n()) %>% 
+  summarise(Unique = n_distinct(ingrediente)) %>% 
+  arrange(desc(Unique)) %>% 
+  ggplot(aes(x=reorder(culturas, Unique), y=Unique, fill=Unique)) + 
+ geom_bar(stat="identity") + coord_flip() +
+  theme_bw() +
+  geom_label(aes(label=Unique), fill="white", size=2, hjust=0.5) +
+  theme(legend.position = "none") +
+  labs(y="Quantidade de ia unico", x="") +
+  ggsave("Unique.pdf", height = 15, width = 10)
 ```
 
 
@@ -108,14 +118,14 @@ ia_1 = contains("tepraloxidim") | contains(ia_1 == "setoxidim" | contains(ia_1 =
 
 
 
-# Selecionando aveia preta
+# Selecionando 
 
 ```{r}
-ervilha <- nd %>% 
-  filter(culturas == "ervilha") %>% 
+mandioquinha <- nd %>% 
+  filter(culturas == "mandioquinha-salsa") %>% 
   select(produto_comercial, ingrediente, culturas)
 
-write_excel_csv(ervilha, "ervilha.csv")
+write_excel_csv(mandioquinha, "mandioquinha-salsa.csv")
 ```
 
 
