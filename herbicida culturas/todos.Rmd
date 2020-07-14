@@ -7,7 +7,7 @@ output: html_document
 
 ```{r include=FALSE}
 library(tidyverse)
-dfsdfs
+library(purrr)
 ```
 
 ```{r include=FALSE}
@@ -128,6 +128,18 @@ mandioquinha <- nd %>%
 
 write_excel_csv(mandioquinha, "mandioquinha-salsa.csv")
 ```
+```{r}
+write = function(x) {
+  nd %>% 
+  mutate_if(is.character, as_factor) %>% 
+  select(produto_comercial, ingrediente, culturas) %>% 
+  filter(x == "x")
+  
+write_excel_csv(mandioquinha, "mandioquinha-salsa.csv")
+  
+}
+
+```
 
 
 # Culturas de inverno
@@ -146,4 +158,41 @@ inverno <- nd %>%
 inverno
 ```
 
+
+```{r}
+nd %>% 
+  group_split(culturas) -> list_of_dfs
+```
+
+```{r}
+list_of_dfs %>%
+  purrr::map(~pull(.,culturas)) %>% # Pull out Species variable
+  purrr::map(~as.character(.)) %>% # Convert factor to character
+  purrr::map(~unique(.)) -> names(list_of_dfs) # Set this as names for list members
+
+names(list_of_dfs)
+```
+
+```{r}
+library(writexl)
+list_of_dfs %>%
+  writexl::write_xlsx(path = "../Herbicidas_BR.xlsx")
+```
+
+```{r}
+# Step 1
+# Define a function for exporting csv with the desired file names and into the right path
+output_csv <- function(data, names){ 
+    folder_path <- "../Herbicidas_BR"
+    
+    write_csv(data, paste0(folder_path, "test-excel-", names, ".csv"))
+  }
+
+# Step 2
+list(data = list_of_dfs,
+     names = names(list_of_dfs)) %>% 
+  
+# Step 3
+  purrr::pmap(output_csv) 
+```
 
