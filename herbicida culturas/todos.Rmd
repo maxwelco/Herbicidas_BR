@@ -8,6 +8,7 @@ output: html_document
 ```{r include=FALSE}
 library(tidyverse)
 library(purrr)
+library(ggrepel)
 ```
 
 ```{r include=FALSE}
@@ -194,5 +195,86 @@ list(data = list_of_dfs,
   
 # Step 3
   purrr::pmap(output_csv) 
+```
+
+# Olericolas
+
+```{r}
+nd %>% 
+  filter(culturas == "mandioquinha-salsa")
+```
+
+ 
+```{r}
+olericolas <- nd %>% 
+  filter(culturas == "alho" | culturas == "batata-doce" | culturas == "cebola" | culturas            == "cenoura" | culturas == "batata" | culturas == "batata-salsa" | culturas ==             "batata_yacon" | culturas == "salsa" | culturas == "coentro" | culturas ==                 "gengibre" | culturas == "coentro" | culturas == "inhame" | culturas ==                    "mandioca" | culturas == "melancia" | culturas == "beterraba" | culturas ==                "berinjela" | culturas == "nabo" | culturas == "rabanete" | culturas == "alfafa"           | culturas == "alface" | culturas == "brocolis" | culturas == "couve-flor" |               culturas == "escarola" | culturas == "espinafre" | culturas == "repolho" |                 culturas == "ervilha" | culturas == "jiló" | culturas == "lentilha" | culturas ==           "melão" | culturas == "morango" | culturas == "pimenta" | culturas == "pimentão"           | culturas == "quibo" | culturas == "tomate" | culturas == "mandioquinha-salsa") %>%
+  mutate(class = ifelse(culturas == "alho" | culturas == "batata" | culturas == "batata-doce" | culturas == "batata_yacon" | culturas == "beterraba" | culturas == "cebola" | culturas == "cenoura" | culturas == "inhame" | culturas == "mandioquinha-salsa" | culturas == "mandioca" | culturas == "nabo" | culturas == "rabanete", "tuberosa", 
+         ifelse(culturas == "alface" | culturas == "alfafa" | culturas == "brocolis" | culturas == "couve-flor" | culturas == "escarola" | culturas == "espinafre" | culturas == "coentro" | culturas == "repolho" | culturas == "salsa", "herbácea", 
+                ifelse(culturas == "ervilha" | culturas == "gengibre" | culturas == "berinjela" | culturas == "jiló" | culturas == "lentilha" | culturas == "melancia" | culturas == "melão" | culturas == "morango" | culturas == "pimenta" | culturas == "pimentão" | culturas == "quiabo" | culturas == "tomate", "fruto", NA))))
+  
+  
+```
+
+
+```{r}
+oler <- olericolas  %>% 
+  group_by(culturas, class) %>% 
+  summarise(Freq = n()) %>% 
+  arrange(desc(Freq)) %>% 
+  filter(culturas != "batata-salsa") 
+
+  ggplot(oler, aes(x=reorder(class, Freq), y=Freq, fill=class)) + #geom_bar(stat="identity") +      
+  coord_flip() + ylim(0,80) +
+   geom_point(alpha=0.3) + geom_boxplot(width=0.5) +
+  theme_bw() + 
+    scale_fill_brewer(palette = "Set2") +
+    geom_label_repel(data = subset(oler, Freq > 50 & class == "tuberosa"), aes(label=culturas),
+                box.padding   = 0.35, nudge_y = 3,
+                  point.padding = 0.8,
+                  segment.color = 'red', size=4, fill="white") +
+    geom_label_repel(data = subset(oler, Freq > 20 & class == "fruto"), aes(label=culturas),
+                box.padding   = 0.35, nudge_y = 3,
+                  point.padding = 0.8,
+                  segment.color = 'red', size=4, fill="white") +
+    geom_label_repel(data = subset(oler, Freq > 10 & class == "herbácea"), aes(label=culturas),
+                box.padding   = 0.35, nudge_y = 4, nudge_x = 0,
+                  point.padding = 0.8,
+                  segment.color = 'red', size=4, fill="white") +
+  theme(legend.position = "none", panel.grid = element_blank()) +
+  labs(y="# de produtos comerciais registrados", x="") +
+    theme(axis.text=element_text(size=16, color="black"), 
+        axis.title=element_text(size=18,face="bold")) +
+  ggsave("Olericolas.pdf", dpi=600)
+```
+
+
+
+
+```{r}
+oler_1 <- olericolas  %>% 
+  filter(culturas != "batata-salsa") %>% 
+  filter(ia_2 == "") %>% 
+  select(culturas, class, ia_1) %>% 
+      mutate(ia_1 = factor(ia_1, 
+                           levels = c("cletodim ", "flumioxazina ", "metribuzim ", "dicloreto de paraquate ", "Glufosinato - sal de amônio ", "fluazifope-P-butilico ", "linurom ", "clomazona ", "glifosato-sal de potássio ", "pendimetalina ", "trifluralina ", "quizalofope-P-etilico ", "Dibrometo de diquate ", "carfentrazona-etilica ", "Paraquate ", "fenoxaprope-P-etilico ", "Ametrina ", "saflufenacil ", "oxidiazona ", "Metam-sodico ", "isoxaflutol ", "ioxinil ", "piraflufem ", "oxifluorfem ", "metolacloro ", "metamitrona ", "glifosato-sal de amônio ", "glifosato ", "flazasulfurom ", "diurom ", 	"oxadiazona "), 
+                       labels = c("cletodim", "flumioxazina", "metribuzim", "dicloreto de paraquate", "glufosinato - sal de amônio", "fluazifope-P-butílico", "linurom", "clomazona", "glifosato - sal de potássio", "pendimetalina", "trifluralina", "quizalofope-P-etilico", "dibrometo de diquate", "carfentrazona-etilica", "paraquate", "fenoxaprope-P-etilico", "ametrina", "saflufenacil", "oxidiazona", "metam-sodico", "isoxaflutol", "ioxinil", "piraflufem", "oxifluorfem", "metolacloro", "metamitrona", "glifosato - sal de amônio", "glifosato", "flazasulfurom", "diurom", "oxadiazona"))) %>% 
+  group_by(class, ia_1) %>% 
+  summarise(Freq = n()) %>% 
+  arrange(desc(Freq)) 
+
+
+
+
+  ggplot(oler_1, aes(x=reorder(ia_1, Freq), y=Freq, fill=Freq)) +
+  geom_bar(stat="identity") +      
+  coord_flip() + facet_grid(~class) +
+  theme_bw() +
+    scale_colour_gradient2() +
+    theme(legend.position = "none") +
+    theme(legend.position = "none", panel.grid = element_blank()) +
+  labs(y="# de ia em produtos comerciais registrados", x="") +
+    theme(axis.text=element_text(size=10, color="black"), strip.text = element_text(size=12,face="bold"),
+        axis.title=element_text(size=12,face="bold")) +
+  ggsave("Olericolas_IA.pdf", dpi=600)
 ```
 
