@@ -129,6 +129,7 @@ mandioquinha <- nd %>%
 
 write_excel_csv(mandioquinha, "mandioquinha-salsa.csv")
 ```
+
 ```{r}
 write = function(x) {
   nd %>% 
