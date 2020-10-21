@@ -1,0 +1,37 @@
+---
+title: "pastagem"
+author: "Maxwel Coura Oliveira"
+date: "10/21/2020"
+output: html_document
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+pastagem <- read_csv("pastagem.csv")
+
+pastagem %>% 
+  nrow()
+```
+
+```{r}
+67+39+15+10+6+2+1+1+1+1+
+31+10+9+3+3+2+1+2+1+1
+```
+
+
+```{r}
+6+2+1
+```
+
+
+```{r}
+pastagem %>% 
+  group_by(ing_ativo,produto_comercial) %>% 
+  count() %>% 
+  arrange(desc(n)) 
+```
