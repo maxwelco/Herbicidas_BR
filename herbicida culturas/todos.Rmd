@@ -64,14 +64,15 @@ nd <- nd %>%
 nd %>% 
   group_by(culturas) %>% 
   summarise(Freq = n()) %>% 
+  filter(Freq > 50) %>% 
   mutate(Percentage = round(Freq / nrow(nd) *100, 1)) %>% 
   arrange(desc(Freq)) %>% 
   ggplot(aes(x=reorder(culturas, Freq), y=Freq, fill=Freq)) + geom_bar(stat="identity") + coord_flip() +
   theme_bw() +
-  geom_label(aes(label=Freq), fill="white", size=2, hjust=0.5) +
+  geom_label(aes(label=Freq), fill="white", size=3, hjust=0.5) +
   theme(legend.position = "none") +
-  labs(y="Quantidade", x="") +
-  ggsave("culturas.pdf", height = 15, width = 10)
+  labs(y="Quantidade", x="", caption= "Fonte: Agrofit | Figura: Maxwel C Oliveira") +
+  ggsave("culturas.png", height = 6, width = 6)
 ```
 
 
@@ -142,6 +143,26 @@ write_excel_csv(mandioquinha, "mandioquinha-salsa.csv")
 }
 
 ```
+
+# Culturas de inverno
+
+```{r}
+17+8
+```
+
+
+```{r}
+library(scales)
+library(ggrepel)
+pastagem <- nd %>% 
+  filter(culturas == "pastagem") %>% 
+  group_by(ingrediente, produto_comercial) %>% 
+  count() %>% 
+  arrange(desc(n))
+pastagem
+```
+
+
 
 
 # Culturas de inverno
